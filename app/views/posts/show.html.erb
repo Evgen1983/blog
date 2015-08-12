@@ -1,0 +1,16 @@
+<!--Adds our title in an <h1> tag with class of title -->
+	
+
+<h1 class="title">
+  <%= @post.title %>
+</h1>
+ 
+ <!--Adds the time the post was created at-->
+<p class="date">
+  Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+</p>
+ 
+<!--Adds the body content-->
+<p class="body">
+  <%= @post.body %>
+</p>
