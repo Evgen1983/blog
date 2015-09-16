@@ -36,7 +36,9 @@
       <p>All Posts</p>
  
       <div class="buttons">
-        <button class="button"><%= link_to "New Post", new_post_path %></button>
+        <%= link_to new_post_path do %> 
+        <button class="button">New Post</button> 
+        <% end %>
         <button class="button">Log Out</button>
       </div>
     </div>
