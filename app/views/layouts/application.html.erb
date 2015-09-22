@@ -18,7 +18,8 @@
       <ul>
         <li class="category">Сайт</li>
         <li><%= link_to "Блог", root_path %></li>
-        <li><%= link_to "Об Авторе", '#' %></li>
+        <li><%= link_to "Об Авторе", pages_about_path %></li>
+        <li><%= link_to "Портфолио", pages_portfolio_path %></li>
       </ul>
  
       <ul>
@@ -33,7 +34,16 @@
     </div>
      <div id="main_content">
     <div id="header">
-      <p>Все Записи</p>
+      <% if current_page?(root_path) %>
+        <p>Все Записи</p>
+      <% elsif current_page?(pages_about_path) %>
+        <p>Обо мне</p>
+      <% elsif current_page?(pages_portfolio_path) %>
+        <p>Портфолио</p>
+      <% else %>
+        <%= link_to "Обратно к записям", root_path %>
+      <% end %>
+
  
       <div class="buttons">
         <%= link_to new_post_path do %> 
