@@ -16,30 +16,30 @@
       </div>
  
       <ul>
-        <li class="category">Website</li>
-        <li><%= link_to "Blog", root_path %></li>
-        <li>About</li>
+        <li class="category">Сайт</li>
+        <li><%= link_to "Блог", root_path %></li>
+        <li><%= link_to "Об Авторе", '#' %></li>
       </ul>
  
       <ul>
-       <li class="category">Social</li>
+       <li class="category">Соцсети</li>
        <li><a href="#">Twitter</a></li>
        <li><a href="#">Instagram</a></li>
        <li><a href="#">Github</a></li>
        <li><a href="#">Email</a></li>
       </ul>
  
-      <p class="sign_in">Admin Login</p>
+      <p class="sign_in">Админ</p>
     </div>
      <div id="main_content">
     <div id="header">
-      <p>All Posts</p>
+      <p>Все Записи</p>
  
       <div class="buttons">
         <%= link_to new_post_path do %> 
-        <button class="button">New Post</button> 
+        <button class="button">Новая Запись</button> 
         <% end %>
-        <button class="button">Log Out</button>
+        <button class="button">Выход</button>
       </div>
     </div>
  
