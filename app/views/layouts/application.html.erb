@@ -18,8 +18,8 @@
       <ul>
         <li class="category">Сайт</li>
         <li><%= link_to "Блог", root_path %></li>
-        <li><%= link_to "Об Авторе", pages_about_path %></li>
-        <li><%= link_to "Портфолио", pages_portfolio_path %></li>
+        <li><%= link_to "Об Авторе", about_path %></li>
+        <li><%= link_to "Портфолио", portfolio_path %></li>
       </ul>
  
       <ul>
@@ -30,15 +30,15 @@
        <li><a href="#">Email</a></li>
       </ul>
  
-      <p class="sign_in">Админ</p>
+      <p class="sign_in"><%= link_to "Админ", signup_path %></p>
     </div>
      <div id="main_content">
     <div id="header">
       <% if current_page?(root_path) %>
         <p>Все Записи</p>
-      <% elsif current_page?(pages_about_path) %>
+      <% elsif current_page?(about_path) %>
         <p>Обо мне</p>
-      <% elsif current_page?(pages_portfolio_path) %>
+      <% elsif current_page?(portfolio_path) %>
         <p>Портфолио</p>
       <% else %>
         <%= link_to "Обратно к записям", root_path %>

@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  get 'pages/about'
+  
+  root               'posts#index'
+  get 'about'     => 'pages#about'
+  get 'portfolio' => 'pages#portfolio'
+  get 'signup'    => 'users#new'
 
-  get 'pages/portfolio'
 
   resources :posts do
   	resources :comments
   end
-  root "posts#index"
+  
 end
