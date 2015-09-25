@@ -1,0 +1,30 @@
+<%= form_for (@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="errors">
+      <h2>Форма содержит <%=@user.errors.count%> <%=Russian::pluralize(@user.errors.count, "ошибку", "ошибки", "ошибок")%>:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <%= f.label :name %><br>
+      <%= f.text_field :name %><br>
+      <br>
+
+      <%= f.label :email %><br>
+      <%= f.email_field :email %><br>
+      <br>
+
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br>
+      <br>
+
+      <%= f.label :password_confirmation %><br>
+      <%= f.password_field :password_confirmation %><br>
+      <br>
+
+      <%= f.submit "Создать мой аккаунт" %><br>
+<% end %>

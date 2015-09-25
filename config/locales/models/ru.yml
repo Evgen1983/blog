@@ -3,6 +3,7 @@ ru:
     models:
       post: запись
       comment: комментарий
+      user: Пользователь
     attributes:
       post:
         title: Заголовок
@@ -10,3 +11,8 @@ ru:
       comment:
         name: Имя
         body: Текст комментария  
+      user: 
+        name: Имя
+        email:  Электронная почта
+        password: Пароль
+        password_confirmation: Подтверждение пароля

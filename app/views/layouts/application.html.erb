@@ -28,7 +28,7 @@
        <li><a href="#">Email</a></li>
       </ul>
  
-      <p class="sign_in"><%= link_to "Админ", signup_path %></p>
+      <p class="sign_in"><%= link_to "Админ", new_user_path %></p>
     </div>
      <div id="main_content">
     <div id="header">
@@ -55,7 +55,10 @@
       <%= content_tag(:div, msg, class: "alert") %>
     <% end %>
  
-    <%= yield %>
- 
+   
+      <%= yield %>
+      
+      <%= debug(params) if Rails.env.development? %>
+      
   </body>
 </html>
