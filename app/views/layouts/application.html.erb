@@ -27,8 +27,12 @@
        <li><a href="#">Github</a></li>
        <li><a href="#">Email</a></li>
       </ul>
- 
-      <p class="sign_in"><%= link_to "Админ", new_user_path %></p>
+      
+      <ul class="sign_in">
+       <li> <%= link_to "Регистрация", new_user_path %></li>
+       <li><%= link_to "Админ", login_path %></li>
+      </ul> 
+
     </div>
      <div id="main_content">
     <div id="header">
@@ -47,7 +51,9 @@
         <%= link_to new_post_path do %> 
         <button class="button">Новая Запись</button> 
         <% end %>
-        <button class="button">Выход</button>
+        <%= link_to(logout_path, method: "delete") do %> 
+         <button class="button">Выход</button>
+         <%end%>
       </div>
     </div>
  
