@@ -29,9 +29,9 @@
       </ul>
       
       <ul class="sign_in">
-       <li> <%= link_to "Регистрация", new_user_path %></li>
-       <li><%= link_to "Админ", login_path %></li>
+       <li><%= link_to "Админ", current_user %></li>
       </ul> 
+      
 
     </div>
      <div id="main_content">
@@ -48,12 +48,14 @@
 
  
       <div class="buttons">
-        <%= link_to new_post_path do %> 
-        <button class="button">Новая Запись</button> 
-        <% end %>
-        <%= link_to(logout_path, method: "delete") do %> 
-         <button class="button">Выход</button>
-         <%end%>
+        <% if current_page?(current_user) %>
+          <%= link_to new_post_path do %> 
+          <button class="button">Новая Запись</button> 
+          <% end %>
+          <%= link_to(logout_path, method: "delete") do %> 
+          <button class="button">Выход</button>
+          <%end%>
+        <%end%>
       </div>
     </div>
  
