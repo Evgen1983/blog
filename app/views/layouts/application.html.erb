@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Мой блог</title>
+    <title>Блог о веб разработке в общем и о Ruby on Rails в частности</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -24,14 +24,12 @@
  
       <ul>
        <li class="category">Ссылки</li> 
-       <li><a href="#">Github</a></li>
-       <li><a href="#">Email</a></li>
+       <li><a href="https://github.com/Evgen1983">Github</a></li>
+       <li><a href="mailto:Baranoff_bonch@mail.ru">Email</a></li>
       </ul>
-      
-      <ul class="sign_in">
-       <li><%= link_to "Админ", current_user %></li>
-      </ul> 
-      
+      <% if logged_in? %>
+        <p class="sign_in"> <%= link_to "Админ", current_user %></p>  
+      <%end%>
 
     </div>
      <div id="main_content">
@@ -46,7 +44,7 @@
         <%= link_to "Обратно к записям", root_path %>
       <% end %>
 
- 
+    <% if logged_in? %>
       <div class="buttons">
         <% if current_page?(current_user) %>
           <%= link_to new_post_path do %> 
@@ -57,6 +55,7 @@
           <%end%>
         <%end%>
       </div>
+    <% end %>
     </div>
  
     <% flash.each do |name, msg| %>

@@ -16,3 +16,5 @@ ru:
         email:  Электронная почта
         password: Пароль
         password_confirmation: Подтверждение пароля
+        user_count: Система учета пользователей
+
