@@ -7,7 +7,7 @@
       <%= link_to 'Удалить', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?' } %>
     <%end%>  
   </p>
-  <p class="body"><%= @post.body %></p>
+  <p class="body"><%= sanitize @post.body %></p>
 
   <div id="comments">
     <h2><%= @post.comments.count %> <%= Russian::pluralize(@post.comments.count, "Комментарий", "Комментария", "Комментариев") %></h2>
