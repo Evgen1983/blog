@@ -22,5 +22,14 @@ module Blog
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
+      if Rails.env == 'production'
+      r301 %r{.*}, 'http://evgenicaweb.ru$&', :if => Proc.new {|rack_env|
+      rack_env['SERVER_NAME'] != 'evgenicaweb.ru'
+      }
+      end
+    end
+
   end
 end
