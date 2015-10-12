@@ -25,7 +25,7 @@ module Blog
     
     config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
       if Rails.env == 'production'
-      r301 %r{.*}, 'http://www.evgenicaweb.ru$&', :if => Proc.new {|rack_env|
+      r301 %r{.*}, 'http://evgenicaweb.ru$&', :if => Proc.new {|rack_env|
       rack_env['SERVER_NAME'] != 'www.evgenicaweb.ru'
       }
       end
