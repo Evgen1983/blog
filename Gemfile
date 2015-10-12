@@ -11,6 +11,7 @@ gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'russian', '~> 0.6.0'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'rack-rewrite', '~> 1.5.0'
 
 
 group :development, :test do
