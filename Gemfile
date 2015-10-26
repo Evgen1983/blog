@@ -12,6 +12,8 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'russian', '~> 0.6.0'
 gem 'rails-i18n', '~> 4.0.0'
 gem 'rack-rewrite', '~> 1.5.0'
+gem 'sitemap_generator'
+gem 'whenever', :require => false
 
 
 group :development, :test do
