@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   get "robots.txt" => "home#robots", format: :text, as: :robots
 
 
-  resources :sitemaps, :only => :show
-    get "sitemap" => "sitemaps#show"
+  get '/sitemap.xml.gz' => 'sitemaps#show'
 
   
 
