@@ -25,10 +25,10 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add '/about', :changefreq => 'weekly'
+  #add '/about', :changefreq => 'weekly'
 
-  add '/portfolio', :changefreq => 'weekly'
-    Post.find_each do |post|
-    add post_path(post), :lastmod => post.updated_at
-  end
+  #add '/portfolio', :changefreq => 'weekly'
+    #Post.find_each do |post|
+    #add post_path(post), :lastmod => post.updated_at
+  #end
 end
